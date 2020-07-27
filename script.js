@@ -1,14 +1,19 @@
 window.addEventListener('keydown', e => {
+    if (!e.altKey) return
     switch (e.key) {
-        case 'PageUp': {
+        case 'j': {
             e.preventDefault()
+            e.stopPropagation()
             history.back()
             break
         }
-        case 'PageDown': {
+        case 'k': {
             e.preventDefault()
+            e.stopPropagation()
             history.forward()
             break
         }
     }
+}, {
+    capture: true
 })
